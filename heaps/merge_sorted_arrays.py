@@ -1,17 +1,16 @@
 import heapq
 
-
 def merge(lists):
     pointers = [0]*len(lists)
     lengths = [len(list) for list in lists]
-    result = []
+    sorted_list = []
     while not areAllPointersOutOfBound(pointers, lengths):
         minHeap = [(lists[pointer_idx][pointer], pointer_idx) for pointer_idx, pointer in enumerate(pointers) if pointer < lengths[pointer_idx]]
         heapq.heapify(minHeap)
         minimumValue, minimumValuePointerIndex = heapq.heappop(minHeap)
-        result.append(minimumValue)
+        sorted_list.append(minimumValue)
         pointers[minimumValuePointerIndex] += 1
-    return result
+    return sorted_list
 
 
 def areAllPointersOutOfBound(pointers, lengths):
@@ -28,6 +27,3 @@ lists = [
     [-124,81,121],
     [3,6,12,20,150],
 ]
-
-print(merge(lists))
-print(mergeBruteForce(lists))
