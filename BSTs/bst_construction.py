@@ -101,11 +101,27 @@ class BST:
             else:
                 return True
 
-    def traverse(self):
-        pass
+    def in_order_traversal(self, result=[]):
+        if self is None:
+            return result
+        self.in_order_traversal(self.left, result)
+        result.append(self.value)
+        self.in_order_traversal(self.right, result)
 
-bst = BST(5)
-bst.insert(1).insert(4).insert(7).insert(10)
+    def post_order_traversal(self, result=[]):
+        if self is None:
+            return result
+        result.append(self.value)
+        self.in_order_traversal(self.left, result)
+        self.in_order_traversal(self.right, result)
+    def post_order_traversal(self, result):
+        if self is None:
+            return result
+        self.in_order_traversal(self.left, result)
+        self.in_order_traversal(self.right, result)
+        result.append(self.value)
 
-print(bst.__dict__)
+
+
+
 
