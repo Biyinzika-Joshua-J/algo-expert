@@ -1,0 +1,3 @@
+def countInversions(list):
+    pass
+

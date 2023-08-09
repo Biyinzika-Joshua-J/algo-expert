@@ -1,0 +1,3 @@
+def insertionSort(list):
+    pass
+

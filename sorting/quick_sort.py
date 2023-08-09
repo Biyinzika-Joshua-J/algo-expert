@@ -1,0 +1,3 @@
+def quickSort(list):
+    pass
+

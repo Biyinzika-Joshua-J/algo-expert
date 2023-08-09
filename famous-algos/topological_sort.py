@@ -1,3 +1,5 @@
+# min:48
+
 class JobNode:
     def __init__(self, job):
         self.job = job
@@ -36,9 +38,15 @@ def createJobGraph(jobs, deps):
     return graph
 
 
+def getOrderedJobs(graph):
+    orderedJobs = []
+    nodes = graph.nodes
+    while len(nodes):
+        pass
+
 def topological_sort_dfs(jobs, deps): # find one order in which these jobs can be completed that will respect their dependency
     jobGraph = createJobGraph(jobs, deps)
-    
+    return getOrderedJobs(jobGraph)
 
 def topological_sort_bfs(jobs, deps): # find one order in which these jobs can be completed that will respect their dependency
     pass
@@ -46,6 +54,8 @@ def topological_sort_bfs(jobs, deps): # find one order in which these jobs can b
 
 jobs = [1,2,3,4] # answers => [1,4,3,2] or [4,1,3,2]
 dependencies = [[1,2], [1,3], [3,2], [4,2], [4,3]] # first job is a prerequisite to the second job 
+
+
 
 
 
