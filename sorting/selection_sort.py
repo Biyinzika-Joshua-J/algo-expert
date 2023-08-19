@@ -1,5 +1,3 @@
-import math
-
 def selectionSort(list):
     currentIdx = 0
     while currentIdx < len(list)-1:
