@@ -33,9 +33,9 @@ class MinMaxStack:
         self.prevMaxValues.append(self.max)
         self.peekElement = self.stack[-1]
 
-    def pop(self): # challenge implemeting it in constant time
+    def pop(self): # used a lists to track the min and max values at any given point in the stack
         if len(self.stack) >= 1:
-            removedValue = self.stack.pop()
+            self.stack.pop()
             self.prevMinValues.pop()
             self.prevMaxValues.pop()
             prevMinValue = self.prevMinValues[-1]
