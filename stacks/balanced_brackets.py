@@ -5,7 +5,7 @@ def balanced_brackets(input):
         ')':'(',
     }
     stack = []
-    opened_brackets = ['[', '{', '(']
+    opened_brackets = '[{('
     for bracket in input:
         if bracket in opened_brackets:
             stack.append(bracket)
