@@ -29,7 +29,10 @@ def sunset_views_optimal(heights, direction):
         
     return buildings
 
-#my approach O(n^2) time and O(n) if you consider the results array
+
+
+
+#my first approach O(n^2) time and O(n) if you consider the results array
 def sunset_views(heights, direction):  
     # approach - find the building with max height in sub arrays of i-n-1 continually
     buildings = []
