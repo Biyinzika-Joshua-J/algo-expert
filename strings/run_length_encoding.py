@@ -1,35 +1,45 @@
 """
-    input: string
-    output: return first non repeating character index
-"""
-"""
-    determine if with the available chars, the document string can be created 
+    data are stored as a single data value rather than the original count
     
 """
 
-def run_length_encoding(characters, document):
-    characeters_hash = generateMap(characters)
-    document_hash = generateMap(document)
-    return canGenerateDoc(characeters_hash, document_hash, document)
+def run_length_encoding(string):
+    encoding = []
+    count = 1
+    char = string[0]
+    for idx, letter in enumerate(string):
+        if idx != 0:
+            if letter == char:
+                count += 1
+            else:
+                if count > 9:
+                    while count > 9:
+                        value = f'{9}{char}'
+                        encoding.append(value)
+                        count = int(count % 9)
 
-def canGenerateDoc(characters, document, document_str):
-    for char in document_str:
-        if char not in characters:
-            return False
-        if characters[char] < document[char]:
-            return False
-    return True
+                    value = f'{count}{char}'
+                    encoding.append(value)
+                else:
+                    value = f'{count}{char}'
+                    encoding.append(value)
+                count = 1
+                char = letter
+    if count > 9:
+        while count > 9:
+            value = f'{9}{char}'
+            encoding.append(value)
+            count = int(count % 9)
 
-def generateMap(string):
-    hash = {}
-    for letter in string:
-        if letter not in hash:
-            hash[letter] = 0
-        hash[letter] += 1
-    return hash
+        value = f'{count}{char}'
+        encoding.append(value)
+    else:
+        value = f'{count}{char}'
+        encoding.append(value)
+    count = 1
+    char = letter
+    return ''.join(encoding)
 
 
-characters = "Bste!hetsi ogEAxpelrt x " # true
-document="AlgoExpert is the Best"
-
-print(run_length_encoding(characters, document))
+string = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAABBCCCCDD'
+print(run_length_encoding(string))

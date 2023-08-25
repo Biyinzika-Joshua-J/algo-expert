@@ -1,4 +1,12 @@
-def palindrome_check():
-    pass
+def palindrome_check(string):
+    start = 0
+    end = len(string)-1
 
-print(palindrome_check())
+    while start < end:
+        if string[start] != string[end]:
+            return False
+        start += 1
+        end -= 1
+    return True
+
+print(palindrome_check('abcdcba'))
