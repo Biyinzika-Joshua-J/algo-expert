@@ -19,18 +19,15 @@ def memo_sol(number, hash={}):
 
 def bottom_up(number):
     last_two_fibs = [0, 1]
-
     if number == 1:
         return 0
     if number == 2:
         return 1
-
     for i in range(number-2):
         first_fib, second_fib = last_two_fibs
         next_fib = first_fib + second_fib
         last_two_fibs[0] = second_fib
         last_two_fibs[1] = next_fib
-
     return last_two_fibs[1]
 
 
