@@ -42,3 +42,15 @@ def bottom_up_revised(n):
         last_fibs[0] = last_fibs[1]
         last_fibs[1] = next
     return last_fibs[1]
+
+
+# using a counter
+def bottom_up_with_counter(n):
+    lastTwo = [0,1]
+    counter = 3 # starting at the 3rd fib
+    while counter <= n:
+        first, second = lastTwo
+        next = first + second
+        lastTwo[0] = lastTwo[1]
+        lastTwo[1] = next
+    return lastTwo[1]
