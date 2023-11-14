@@ -51,3 +51,21 @@ shift = 54
 # tests the understanding of the modulo operator
 print(caesar_cipher(input, shift))
 print(caesar_cipher_modulo(input, shift))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

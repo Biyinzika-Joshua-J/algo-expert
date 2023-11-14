@@ -43,3 +43,36 @@ def run_length_encoding(string):
 
 string = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAABBCCCCDD'
 print(run_length_encoding(string))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,13 +6,9 @@ def nth_fib_bf(number):
     else:
         return nth_fib_bf(number-1) + nth_fib_bf(number-2)
     
-def memo_sol(number, hash={}):
+def memo_sol(number, hash={1:0, 2:1}):
     if number in hash:
         return hash[number]
-    if number == 1:
-        return 0
-    elif number == 2:
-        return 1
     else:
         hash[number] = memo_sol(number-1, hash) + memo_sol(number-2, hash)
         return hash[number]
@@ -31,5 +27,18 @@ def bottom_up(number):
     return last_two_fibs[1]
 
 
-print(bottom_up(100))
-print(nth_fib_bf(100))
+
+
+
+def bottom_up_revised(n):
+    last_fibs = [0, 1]
+    if n == 1:
+        return 0
+    if n == 2:
+        return 1
+    for i in range(n-2):
+        first, second = last_fibs
+        next = first + second
+        last_fibs[0] = last_fibs[1]
+        last_fibs[1] = next
+    return last_fibs[1]
