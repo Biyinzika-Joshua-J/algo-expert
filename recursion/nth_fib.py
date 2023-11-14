@@ -53,4 +53,7 @@ def bottom_up_with_counter(n):
         next = first + second
         lastTwo[0] = lastTwo[1]
         lastTwo[1] = next
-    return lastTwo[1]
+    return lastTwo[1] if n > 1 else lastTwo[0]
+
+ 
+
