@@ -14,3 +14,9 @@ def SquaredSort(array):
     return result
 
 print(SquaredSort([-4,-3,-2,-1,0,1,2,3,4]))
+
+def bruteForce(array):
+    for idx in range(len(array)):
+        squaredValue = array[idx]**2
+        array[idx] = squaredValue
+    return array.sort()

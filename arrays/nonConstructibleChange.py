@@ -5,7 +5,7 @@ def nCC(coins): # return minimum amount of change you can't create..
         if coin > currentChangeCreated + 1:
             return currentChangeCreated + 1
         currentChangeCreated += coin
-    return -1
+    return currentChangeCreated + 1
 
 """
 [7] => 1
