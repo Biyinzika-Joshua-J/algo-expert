@@ -78,7 +78,6 @@ class BST:
                         currentNode.left = currentNode.right.left
                     else:
                         currentNode.value = None
-
                 #3
                 elif parentNode.left == currentNode:
                     parentNode.left = currentNode.left if currentNode.left is not None else currentNode.right

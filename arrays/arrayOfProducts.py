@@ -1,6 +1,6 @@
 def arrayOfProducts(array):
-    prefix = [0 for i in range(len(array))]
-    suffix = [0 for i in range(len(array))]
+    prefix = [1 for i in range(len(array))]
+    suffix = [1 for i in range(len(array))]
     
     
     # generate prefix
@@ -16,6 +16,9 @@ def arrayOfProducts(array):
             suffix[idx] = array[idx]
             continue
         suffix[idx] = array[idx] * suffix[idx+1]
+    
+    print(prefix)
+    print(suffix)
 
     result = [i for i in range(len(array))]
     for idx in range(len(array)):
@@ -30,6 +33,21 @@ def arrayOfProducts(array):
     
 
 
+# better space - O(n)
+def optimized(array):
+    products = [1 for _ in range(len(array))]
+
+    leftRunningProduct = 1
+    for i in range(len(array)):
+        products[i] = leftRunningProduct
+        leftRunningProduct *= array[i]
+
+    rightRunningProduct = 1
+    for i in reversed(range(len(array))):
+        products[i] *= rightRunningProduct
+        rightRunningProduct *= array[i]
+
+    return products
 
 
 test = [5, 1, 4, 2] # => [8, 40, 10, 20]
